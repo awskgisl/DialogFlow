@@ -1,25 +1,17 @@
 package hello;
 
-public class WebhookResponse {
-    private final String speech;
-    private final String displayText;
+public class SimpleResponse {
+    private final String textToSpeech;
 
-    private final String source = "java-webhook";
-
-    public WebhookResponse(String speech, String displayText) {
-        this.speech = speech;
-        this.displayText = displayText;
+   public SimpleResponse(String textToSpeech) {
+        this.textToSpeech = textToSpeech;
+        
     }
 
-    public String getSpeech() {
-        return speech;
+    public String getTextToSpeech() {
+        return textToSpeech;
     }
 
-    public String getDisplayText() {
-        return displayText;
-    }
 
-    public String getSource() {
-        return source;
-    }
+   
 }
