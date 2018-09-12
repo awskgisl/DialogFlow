@@ -12,8 +12,8 @@ public class HelloWorldController {
 
 	@SuppressWarnings("unused")
 	@RequestMapping(value = "/webhook", method = RequestMethod.POST)
-	public ResponseEntity<SimpleResponse> getResult(@RequestBody RequestData obj) {
-		SimpleResponse emp = new SimpleResponse("Hello " + obj.getObj() + " Welcome to REST App");
+	public ResponseEntity<SimpleResponse> getResult(@RequestBody RequestData parameters) {
+		SimpleResponse emp = new SimpleResponse("Hello " + parameters.getObj() + " Welcome to REST App");
 		if (emp == null) {
 			return new ResponseEntity<SimpleResponse>(emp, HttpStatus.NO_CONTENT);
 		}
