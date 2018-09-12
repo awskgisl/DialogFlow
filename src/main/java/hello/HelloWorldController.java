@@ -14,6 +14,8 @@ public class HelloWorldController {
 	@SuppressWarnings("unused")
 	@RequestMapping(value = "/webhook", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<SimpleResponse> getResult(@RequestBody RequestData parameters) {
+		String result=parameters.getText();
+		System.out.println(result);
 		SimpleResponse emp = new SimpleResponse("Hello DialogFlows Welcomes you to REST App");
 		if (emp == null) {
 			return new ResponseEntity<SimpleResponse>(emp, HttpStatus.NO_CONTENT);
