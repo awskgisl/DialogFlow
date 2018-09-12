@@ -13,7 +13,7 @@ public class HelloWorldController {
 	@SuppressWarnings("unused")
 	@RequestMapping(value = "/webhook", method = RequestMethod.POST)
 	public ResponseEntity<SimpleResponse> getResult(@RequestBody RequestData parameters) {
-		SimpleResponse emp = new SimpleResponse("Hello " + parameters.getAny() + " Welcome to REST App");
+		SimpleResponse emp = new SimpleResponse("Hello " + parameters.getText() + " Welcome to REST App");
 		if (emp == null) {
 			return new ResponseEntity<SimpleResponse>(emp, HttpStatus.NO_CONTENT);
 		}
