@@ -2,15 +2,16 @@ package hello;
 
 public class RequestData {
 	
-	private String obj;
+	private String any;
 
-	public String getObj() {
-		return obj;
+	public String getAny() {
+		return any;
 	}
 
-	public void setObj(String obj) {
-		this.obj = obj;
+	public void setAny(String any) {
+		this.any = any;
 	}
 
+	
 	
 }
