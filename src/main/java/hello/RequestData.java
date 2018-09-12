@@ -2,16 +2,17 @@ package hello;
 
 public class RequestData {
 	
-	private String any;
+	private String text;
 
-	public String getAny() {
-		return any;
+	public String getText() {
+		return text;
 	}
 
-	public void setAny(String any) {
-		this.any = any;
+	public void setText(String text) {
+		this.text = text;
 	}
 
+	
 	
 	
 }
