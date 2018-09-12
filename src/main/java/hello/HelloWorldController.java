@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloWorldController {
 
 	@SuppressWarnings("unused")
-	@RequestMapping(value = "/webhook", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/webhook", method = RequestMethod.POST)
 	public ResponseEntity<SimpleResponse> getResult(@RequestBody RequestData parameters) {
 		String result=parameters.getText();
 		System.out.println(result);
