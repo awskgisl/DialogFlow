@@ -1,15 +1,15 @@
 package hello;
 
 public class SimpleResponse {
-    private final String textToSpeech;
+    private final String fulfillmentText;
 
-   public SimpleResponse(String textToSpeech) {
-        this.textToSpeech = textToSpeech;
+   public SimpleResponse(String fulfillmentText) {
+        this.fulfillmentText = fulfillmentText;
         
     }
 
-    public String getTextToSpeech() {
-        return textToSpeech;
+    public String getFulfillmentText() {
+        return fulfillmentText;
     }
 
 
