@@ -2,14 +2,15 @@ package hello;
 
 public class RequestData {
 	
-	private String text;
+	private String obj;
 
-	public String getText() {
-		return text;
+	public String getObj() {
+		return obj;
 	}
 
-	public void setText(String text) {
-		this.text = text;
+	public void setObj(String obj) {
+		this.obj = obj;
 	}
 
+	
 }
