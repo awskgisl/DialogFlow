@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloWorldController {
 
 	@SuppressWarnings("unused")
-	@RequestMapping(value = "/webhook", method = RequestMethod.POST)
-	public ResponseEntity<SimpleResponse> getResult(@RequestBody RequestData parameters) {
+	@RequestMapping(value = "/webhook", method = RequestMethod.GET)
+	public ResponseEntity<SimpleResponse> getResult(@RequestParam String parameters) {
 		String result=parameters.getText();
 		System.out.println(result);
-		SimpleResponse emp = new SimpleResponse("Hello DialogFlows Welcomes you to REST App");
+		SimpleResponse emp = new SimpleResponse("Hello DialogFlows Welcomes you to REST App"+parameters);
 		if (emp == null) {
 			return new ResponseEntity<SimpleResponse>(emp, HttpStatus.NO_CONTENT);
 		}
