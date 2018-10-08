@@ -24,7 +24,7 @@ public class HelloWorldController {
 		String outAll="";
 		try {
 
-			URL url = new URL("http://hawes.kgfsl.com:8081/CIP_DX_ENGINE_API/api/accountcollection?id=82");
+			URL url = new URL("https://demo.kgfsl.com/CIP_DX_ENGINE_API/api/accountcollection?id=81");
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 			conn.setDoOutput(true);
 			conn.setRequestMethod("POST");
