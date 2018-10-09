@@ -17,14 +17,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloWorldController {
 
-	@SuppressWarnings("unused")
 	@RequestMapping(value = "/webhook", method = RequestMethod.GET)
       public String getResult(@RequestParam String data) {
-		SimpleResponse emp = new SimpleResponse("Hello DialogFlows Welcomes you to REST App ");
-		if (emp == null) {
-			return new String(emp, HttpStatus.NO_CONTENT);
-		}
-		return new String(emp, HttpStatus.OK);
+		String res="\"fulfillmentText\" : "+"\"Hello "+data+"\"" ;
+		System.out.println(res);
+		return res;
 	}
 }
 
