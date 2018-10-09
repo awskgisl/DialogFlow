@@ -19,12 +19,12 @@ public class HelloWorldController {
 
 	@SuppressWarnings("unused")
 	@RequestMapping(value = "/webhook", method = RequestMethod.GET)
-      public ResponseEntity<SimpleResponse> getResult(@RequestParam String data) {
+      public SimpleResponse getResult(@RequestParam String data) {
 		SimpleResponse emp = new SimpleResponse("Hello DialogFlows Welcomes you to REST App ");
 		if (emp == null) {
 			return new ResponseEntity<SimpleResponse>(emp, HttpStatus.NO_CONTENT);
 		}
-		return new ResponseEntity<SimpleResponse>(emp, HttpStatus.OK);
+		return new SimpleResponse(emp, HttpStatus.OK);
 	}
 }
 
