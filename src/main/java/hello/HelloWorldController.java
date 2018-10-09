@@ -23,7 +23,7 @@ public class HelloWorldController {
 
 		
 
-		SimpleResponse emp = new SimpleResponse("Hello DialogFlows Welcomes you to REST App ");
+		String emp = "Hello DialogFlows Welcomes you to REST App";
 		if (emp == null) {
 			return new ResponseEntity<String>(emp, HttpStatus.NO_CONTENT);
 		}
