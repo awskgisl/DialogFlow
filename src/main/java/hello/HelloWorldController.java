@@ -19,7 +19,7 @@ public class HelloWorldController {
 
 	@SuppressWarnings("unused")
 	@RequestMapping(value = "/webhook", method = RequestMethod.GET)
-	public @ResponseBody ResponseEntity<SimpleResponse> getResult(@RequestParam String data) {
+	public ResponseEntity<SimpleResponse> getResult(@RequestParam String data) {
 
 		String outAll="";
 		try {
