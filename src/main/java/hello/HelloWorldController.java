@@ -6,6 +6,7 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -58,5 +59,14 @@ public class HelloWorldController {
 			return "Empty";
 		}
 		return outAll;
+	}
+
+	@RequestMapping(value = "/webhook", method = RequestMethod.POST)
+	public SimpleResponse getResultBody(@RequestBody SimpleResponse data) {
+		SimpleResponse response = new SimpleResponse();
+		response.setArt_id(data.getArt_id());
+		response.setArt_message(data.getArt_message());
+		return response;
+
 	}
 }
