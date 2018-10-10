@@ -61,7 +61,7 @@ public class HelloWorldController {
 		return outAll;
 	}
 
-	@RequestMapping(value = "/webhook", method = RequestMethod.POST)
+	@RequestMapping(value = "/postwebhook", method = RequestMethod.POST)
 	public SimpleResponse getResultBody(@RequestBody SimpleResponse data) {
 		SimpleResponse response = new SimpleResponse();
 		response.setArt_id(data.getArt_id());
