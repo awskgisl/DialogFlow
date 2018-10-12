@@ -17,19 +17,16 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloWorldController {
 
 	@RequestMapping(value = "/webhook", method = RequestMethod.GET)
-	public String getResult(@RequestParam String data) {
+	public String getResult(@RequestParam int id, String message) {
 
 		String outAll = "";
 		try {
-
 			URL url = new URL("https://demo.kgfsl.com/CIP_DX_ENGINE_API/api/accountcollection?id=81");
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 			conn.setDoOutput(true);
 			conn.setRequestMethod("POST");
 			conn.setRequestProperty("Content-Type", "application/json");
-
-			String input = "[{\"id\": 1,\"message\":\"petrik\"},{\"id\": 2,\"message\":\"Dan\"}]";
-
+			String input = "[{\"id\":"+id+",\"message\":\""+message+"\"}]";
 			OutputStream os = conn.getOutputStream();
 			os.write(input.getBytes());
 			os.flush();
@@ -62,4 +59,12 @@ public class HelloWorldController {
 		return outAll;
 	}
 
+	@RequestMapping(value = "/postwebhook", method = RequestMethod.POST)
+	public SimpleResponse getResultBody(@RequestBody  List<SimpleResponse> data) {
+		SimpleResponse response = new SimpleResponse();
+		response.setId(data.get(0).getId());
+		response.setMessage(data.get(0).getMessage());
+		return response;
+
+	}
 }
