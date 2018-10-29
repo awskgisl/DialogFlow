@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloWorldController {
 
 	@RequestMapping(value = "/webhook", method = RequestMethod.GET)
-	public String getResult(@RequestParam int ssn, int accnumber,int consnumber) {
+	public String getResult(@RequestParam int ssn, int accnumber,int consnumber, int opttype) {
 
 		String outAll = "";
 		try {
@@ -26,7 +26,7 @@ public class HelloWorldController {
 			conn.setDoOutput(true);
 			conn.setRequestMethod("POST");
 			conn.setRequestProperty("Content-Type", "application/json");
-			String input = "[{\"ssn\":"+ssn+",\"accnumber\":"+accnumber+",\"consnumber\":"+consnumber+"}]";
+			String input = "[{\"ssn\":"+ssn+",\"accnumber\":"+accnumber+",\"consnumber\":"+consnumber+",\"opttype\":"+opttype+"}]";
 			System.out.println(input);
 			OutputStream os = conn.getOutputStream();
 			os.write(input.getBytes());
