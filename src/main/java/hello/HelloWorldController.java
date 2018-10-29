@@ -27,6 +27,7 @@ public class HelloWorldController {
 			conn.setRequestMethod("POST");
 			conn.setRequestProperty("Content-Type", "application/json");
 			String input = "[{\"ssn\":"+ssn+",\"accnumber\":"+accnumber+",\"consnumber\":"+consnumber+"}]";
+			System.out.println(input);
 			OutputStream os = conn.getOutputStream();
 			os.write(input.getBytes());
 			os.flush();
