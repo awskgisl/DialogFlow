@@ -92,7 +92,8 @@ public class HelloWorldController {
 				System.out.println("Output from Server .... \n");
 				while ((output = br.readLine()) != null) {
 					// System.out.println(output);
-					outAll += outAll + output;
+					//outAll += outAll + output;
+					outAll="[{\"text\":\"+Ac0001, Balance is $500\"},{\"text\":\"Ac0050, Balance is $60.00\"}]";
 				}
 				System.out.println(outAll);
 
