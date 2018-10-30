@@ -93,7 +93,7 @@ public class HelloWorldController {
 				while ((output = br.readLine()) != null) {
 					// System.out.println(output);
 					//outAll += outAll + output;
-					outAll="[{\"text\":\"+Ac0001, Balance is $500\"},{\"text\":\"Ac0050, Balance is $60.00\"}]";
+				outAll="[{\"text\":\"Ac0001, Balance is $500\"},{\"text\":\"Ac0050, Balance is $60.00\"}]";
 				}
 				System.out.println(outAll);
 
